@@ -173,3 +173,30 @@ canvas {
   margin-right: 105px;
 }
 
+.gallery-top {
+  background-color: rgba(58, 219, 42, 0.678);
+}
+
+.factfile-info {
+  border: solid 3px blue;
+  border-radius: 35px;
+  align-items: center;
+  padding: 10px;
+  background-color: blue;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 2%;
+  color: white;
+}
+
+.factfile-info ul{
+  list-style: none;
+  text-align: left;
+  margin-left: 29%;
+}
+
+.country-flag {
+  height: 50px;
+  width: 70px;
+}
+
