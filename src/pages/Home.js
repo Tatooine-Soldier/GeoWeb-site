@@ -18,7 +18,9 @@ export default function Home() {
                 </div>
             </section>
             <section className="second-section-home">
-
+                <p>GeoWeb is a non-profit geographical organisation. We do various tasks, such as landscape surveying, metal detection and cartography.
+                This website explores some of our services and explains our origins as an organisation.</p>
+                <p>If you want t avail of these services, please click <a href="Contact">Here</a> to contact us. We are always pleased to serve new customers.</p>
             </section>
             {window.onload = function(){
             let canvas = document.getElementById('canvas');

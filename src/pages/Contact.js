@@ -1,10 +1,20 @@
-import {React, useState, useRef} from 'react'
+import {React, useState, useRef, useEffect} from 'react'
 import Comments from './components/Comments'
 
+const LOCAL_STORAGE_KEY = "countryApp.comments"
 
 export default function Contact() {
     const [comments, setComments] = useState([])
     const commentRef = useRef()
+
+    useEffect(() => {       //makes todos stay even after reload page
+        const storedComments = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) //parse this string to an array
+        if (storedComments) setComments(storedComments)   //if there are todos in memory, display them on reload
+    }, [])
+
+    useEffect(() => {       //saves 
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(comments)) //ensure todos saved as strings
+    }, [comments])   //saves the comment when comments changes 
 
     function handleComment(){
         console.log(commentRef.current.value);
@@ -48,7 +58,7 @@ export default function Contact() {
                         <button onClick={clear}>Clear</button><button onClick={handleComment}>Submit</button>
                     </div>
                 </div>
-                <div className="comments-section">
+                <div className="box-comments">
                     <Comments comments={comments}/>
                 </div>
             </div>

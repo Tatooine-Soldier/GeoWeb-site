@@ -3,7 +3,12 @@ import React from 'react'
 export default function About() {
     return (
         <div className="main">
-            About
+            <div className="about-top">
+                {/* <iframe/> */}
+            </div>
+            <div className="about-bottom">
+
+            </div>
         </div>
     )
 }

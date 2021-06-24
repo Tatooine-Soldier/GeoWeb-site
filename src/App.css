@@ -124,6 +124,7 @@ nav ul li:hover {
 
 .second-section-home {
   background-color: rgba(58, 219, 42, 0.678);
+  color: white;
 }
 
 canvas {
@@ -257,8 +258,26 @@ canvas {
   margin-right: 30%;
 }
 
+.box-comments {
+  margin-top: .5%;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: black solid 1px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.individual-comment {
+  border: solid 1px black;
+  border-bottom: none; 
+}
+
 .comments-section-cont {
   background-color:  rgba(112, 133, 109, 0.522);
+  justify-content: center;
+  align-items: center;
 }
 
 .input-cont {
@@ -271,6 +290,14 @@ canvas {
 .controls-container {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+.about-top {
+  background-image:  linear-gradient(0deg, rgba(47, 121, 206, 0.699), rgba(4, 185, 240, 0.76));
+}
+
+.about-bottom {
+  background-color: rgba(58, 219, 42, 0.678);;
 }
 
 
