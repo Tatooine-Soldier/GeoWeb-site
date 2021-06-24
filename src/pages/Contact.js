@@ -1,6 +1,21 @@
-import React from 'react'
+import {React, useState, useRef} from 'react'
+import Comments from './components/Comments'
+
 
 export default function Contact() {
+    const [comments, setComments] = useState([])
+    const commentRef = useRef()
+
+    function handleComment(){
+        console.log(commentRef.current.value);
+        setComments(prevComments => {return [...prevComments, {id:Math.random(0,1000), content:commentRef.current.value}]})
+    }
+
+    function clear() {
+        let box = document.getElementById("comments-input");
+        box.value = "";
+    }
+
     return (
         <div className="main">
             <div className="contact-top">
@@ -28,10 +43,13 @@ export default function Contact() {
                 <h2>Comments Section</h2>
                 <p>Leave a comment below...</p>
                 <div className="input-cont">
-                    <textarea id="comments-input" name="comments-input" rows="4" cols="35" placeholder="comment..."></textarea>
+                    <textarea id="comments-input" name="comments-input" rows="4" cols="35" placeholder="comment..." ref={commentRef}></textarea>
                     <div className="controls-container">
-                        <button>Clear</button><input type="submit"/>
+                        <button onClick={clear}>Clear</button><button onClick={handleComment}>Submit</button>
                     </div>
+                </div>
+                <div className="comments-section">
+                    <Comments comments={comments}/>
                 </div>
             </div>
         </div>
